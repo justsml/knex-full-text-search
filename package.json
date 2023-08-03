@@ -1,0 +1,33 @@
+{
+  "name": "knex-full-text-search-plugin",
+  "version": "1.0.0",
+  "description": "A Knex plugin for easier FTS (Full-text Search) in Postgres.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc",
+    "test": "tsc"
+  },
+  "keywords": ["knex", "full-text search", "fts", "sql", "tsquery", "tsvector", "postgres", "plugin"],
+  "homepage": "https://github.com/justsml/knex-full-text-search",
+  "repository": {
+    "url": "https://github.com/justsml/knex-full-text-search"
+  },
+  "author": {
+    "name": "Dan Levy",
+    "email": "dan@danlevy.net",
+    "url": "https://danlevy.net"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "knex": "^2.5.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  }
+}
