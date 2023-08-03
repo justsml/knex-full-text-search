@@ -1,5 +1,8 @@
 # Knex Full-text Search Plugin
 
+[![NPM version](https://img.shields.io/npm/v/knex-full-text-search-plugin.svg)](https://www.npmjs.com/package/knex-full-text-search-plugin)
+[![GitHub stars](https://img.shields.io/github/stars/justsml/knex-full-text-search.svg?style=social)](https://github.com/justsml/knex-full-text-search)
+
 A Knex plugin for easy Full-text Search queries in Postgres.
 
 ## Get Started
