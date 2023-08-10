@@ -43,18 +43,33 @@ const results = await db('products')
     .orderBy('rank', 'desc');
 ```
 
+Will produce [the following SQL](https://replit.com/@justsml/Knex-Postgres-Full-Text-Search-Example#index.ts) query:
+
+```sql
+select id, name, ts_rank(`description`, websearch_to_tsquery('simple', 'Shoes')) as `rank`
+  from products
+  where `description` @@ websearch_to_tsquery('simple', 'Shoes')
+  order by `rank` desc;
+```
+
 ### `whereWebSearch`
 
 Add a `WHERE` clause to your query to filter by the given query.
 
-Used in conjunction with `selectWebSearchRank` to compute a `rank` to order the results.
+> Use in conjunction with `selectWebSearchRank` to compute a `rank` to order the results.
 
 **Note:** Intelligently handles `undefined` input by returning the query builder unmodified.
 
 ```ts
 const results = await db('products')
   .select('id', 'name')
-  .selectWebSearchRank('description', 'Shoes')
   .whereWebSearch('description', 'Shoes')
-  .orderBy('rank', 'desc');
+```
+
+Will produce [the following SQL](https://replit.com/@justsml/Knex-Postgres-Full-Text-Search-Example#index.ts) query:
+
+```sql
+select id, name
+  from products
+  where `description` @@ websearch_to_tsquery('simple', 'Shoes');
 ```
