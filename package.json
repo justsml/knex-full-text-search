@@ -1,6 +1,6 @@
 {
   "name": "knex-full-text-search-plugin",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "A Knex plugin for easier FTS (Full-text Search) in Postgres.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -22,7 +22,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "knex": "^2.5.1"
+    "knex": "*"
   },
   "devDependencies": {
     "prettier": "^3.0.1",
